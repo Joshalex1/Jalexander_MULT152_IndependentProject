@@ -12,12 +12,15 @@ public class ColorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Key") && !isActivated)
+        Debug.Log("Trigger entered by: " + other.name);
+        if (!isActivated && other.CompareTag(gameObject.tag))
         {
-            if (other.GetComponent<Renderer>().material.color == GetComponent<Renderer>().material.color)
-            {
-                ActivateTrigger(other.gameObject);
-            }
+            Debug.Log("Tag matched: " + other.tag);
+            ActivateTrigger(other.gameObject);
+        }
+        else
+        {
+            Debug.Log("Tag did not match or already activated.");
         }
     }
 
@@ -27,9 +30,11 @@ public class ColorTrigger : MonoBehaviour
         triggerLight.enabled = false;
         Destroy(key);
         activatedCount++;
+        Debug.Log("Activated count: " + activatedCount);
 
         if (activatedCount == totalTriggers)
         {
+            Debug.Log("All triggers activated. Destroying door.");
             Destroy(door);
         }
     }
