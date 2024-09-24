@@ -5,11 +5,14 @@ using UnityEngine;
 public class playermove : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float jumpForce = 10f;
+    private bool isGrounded;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -26,15 +29,16 @@ public class playermove : MonoBehaviour
      transform.Translate(movement);
 
 
+
+
         if (Input.GetKeyDown(KeyCode.Space))
 
         {
-            Vector3 jump = new Vector3(0, 3, 0 );
+            Vector3 jump = new Vector3(0, 3, 0);
             transform.Translate(jump);
 
 
         }
-
 
 
     }

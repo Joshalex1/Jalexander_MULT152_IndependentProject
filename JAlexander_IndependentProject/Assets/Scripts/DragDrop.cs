@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class DragDrop : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 offset;
@@ -32,5 +32,4 @@ public class Key : MonoBehaviour
         mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
-} 
-
+}

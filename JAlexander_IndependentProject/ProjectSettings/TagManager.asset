@@ -10,6 +10,7 @@ TagManager:
   - Purple
   - Key
   - Artifact
+  - Ground
   layers:
   - Default
   - TransparentFX
