@@ -8,6 +8,8 @@ TagManager:
   - Red
   - Green
   - Purple
+  - Key
+  - Artifact
   layers:
   - Default
   - TransparentFX
