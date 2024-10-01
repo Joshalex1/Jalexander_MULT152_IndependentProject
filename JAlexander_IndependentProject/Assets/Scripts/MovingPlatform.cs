@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public float speed = 2f;
-    public float moveDistance = 5f;
-    private Vector3 startPosition;
-    private bool movingForward = true;
+    public Transform pointA;
+    public Transform pointB;
+    public float speed = 2.0f;
+
+    private Vector3 target;
 
     void Start()
     {
-        startPosition = transform.position;
-        InvokeRepeating("MovePlatform", 0f, 0.02f);
+        target = pointB.position;
     }
 
-    void MovePlatform()
+    void Update()
     {
-        if (movingForward)
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-            if (Vector3.Distance(startPosition, transform.position) >= moveDistance)
-            {
-                movingForward = false;
-            }
+        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
+        if (transform.position == pointB.position)
+        {
+            target = pointA.position;
+        }
+        else if (transform.position == pointA.position)
+        {
+            target = pointB.position;
         }
     }
 }
