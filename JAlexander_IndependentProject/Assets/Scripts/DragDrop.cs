@@ -6,23 +6,28 @@ public class dragdrop : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 offset;
-
+   
     void OnMouseDown()
     {
         isDragging = true;
         offset = transform.position - GetMouseWorldPos();
+        
     }
 
     void OnMouseUp()
     {
         isDragging = false;
+        
     }
 
     void Update()
     {
         if (isDragging)
         {
-            transform.position = GetMouseWorldPos() + offset;
+
+          Vector3 currentMousePos = GetMouseWorldPos() + offset;
+            transform.position = new Vector3(transform.position.x, currentMousePos.y, currentMousePos.z);
+         Debug.Log( offset);
         }
     }
 
