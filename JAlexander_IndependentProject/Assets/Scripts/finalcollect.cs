@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class finalcollect : MonoBehaviour
 {
+    public ParticleSystem collectEffect; 
+    public Animator animator;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,6 +24,17 @@ public class finalcollect : MonoBehaviour
                 CameraController.enabled = false;
             }
 
+            if (animator != null)
+            {
+                animator.enabled = false;
+            }
+
+            if (collectEffect != null)
+            {
+                ParticleSystem effect = Instantiate(collectEffect, transform.position, Quaternion.identity);
+                effect.Play();
+                Destroy(effect.gameObject, effect.main.duration);
+            }
 
             Debug.Log("Game Over");
 
