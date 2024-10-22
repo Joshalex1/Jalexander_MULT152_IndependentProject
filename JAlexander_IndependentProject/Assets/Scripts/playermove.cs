@@ -55,7 +55,7 @@ public class playermove : MonoBehaviour
             movement = new Vector3(hVal, 0, vVal) * speed * Time.deltaTime;
             transform.Translate(movement);
             animator.SetBool("isrunning", true);
-            asplayer.PlayOneShot(footstepSound, .03f);
+            asplayer.PlayOneShot(footstepSound, .5f);
         }
         else
         {
@@ -69,7 +69,7 @@ public class playermove : MonoBehaviour
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
             animator.SetTrigger("Jump");
-            asplayer.PlayOneShot(jumpSound, .05f);
+            asplayer.PlayOneShot(jumpSound, 1f);
         }
     }
 
