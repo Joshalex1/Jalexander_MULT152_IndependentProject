@@ -1531,6 +1531,7 @@ MonoBehaviour:
   - {fileID: 919132148150554431}
   - {fileID: 919132148755284843}
   door: {fileID: 693183126}
+  collectEffect: {fileID: 9153395129501797987, guid: fd6515f63953c4da88cc95046a44da58, type: 3}
 --- !u!136 &458476172
 CapsuleCollider:
   m_ObjectHideFlags: 0
