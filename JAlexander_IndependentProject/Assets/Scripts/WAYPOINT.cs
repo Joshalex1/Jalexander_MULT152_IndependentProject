@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WAYPOINT : MonoBehaviour
 {
+    public Material reachedMaterial;
     public GameObject[] waypoints;
     int currentWP = 0;
 
@@ -28,7 +29,15 @@ public class WAYPOINT : MonoBehaviour
         this.transform.LookAt(waypoints[currentWP].transform);
 
         this.transform.Translate(0, 0, speed * Time.deltaTime);
-        
+
+  if (currentWP >= waypoints.Length)
+            currentWP = 0;
+
+        this.transform.LookAt(waypoints[currentWP].transform);
+        this.transform.Translate(0, 0, speed * Time.deltaTime);
+
+      
+
     }
 
 
