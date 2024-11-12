@@ -11,6 +11,7 @@ TagManager:
   - Key
   - Artifact
   - Ground
+  - powerup
   layers:
   - Default
   - TransparentFX
