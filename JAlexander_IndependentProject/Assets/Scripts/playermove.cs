@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class playermove : MonoBehaviour
 {
     public float speed = 5.0f;
@@ -17,7 +17,7 @@ public class playermove : MonoBehaviour
 
     private AudioSource asplayer;
 
-
+    public Transform respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +40,20 @@ public class playermove : MonoBehaviour
     }
     // Update is called once per frame
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            PlayGame();
 
+        }
+    }
+
+
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
 
     void Update()
     {
