@@ -53,7 +53,7 @@ public class playermove : MonoBehaviour
         if (hVal != 0 || vVal != 0)
         {
             movement = new Vector3(hVal, 0, vVal) * speed * Time.deltaTime;
-            transform.Translate(movement);
+            transform.Translate (movement);
             animator.SetBool("isrunning", true);
             asplayer.PlayOneShot(footstepSound, .5f);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class colortrigger : MonoBehaviour
+public class ColorTrigger : MonoBehaviour
 {
     public Light triggerLight;
     private bool isActivated = false;

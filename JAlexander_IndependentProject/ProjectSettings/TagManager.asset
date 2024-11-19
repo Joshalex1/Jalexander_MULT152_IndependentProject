@@ -12,6 +12,7 @@ TagManager:
   - Artifact
   - Ground
   - powerup
+  - Platform
   layers:
   - Default
   - TransparentFX

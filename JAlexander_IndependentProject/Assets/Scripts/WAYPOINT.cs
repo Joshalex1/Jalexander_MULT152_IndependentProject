@@ -45,7 +45,7 @@ public class WAYPOINT : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.SetParent(transform);
+            other.transform.SetParent(transform, true);
         }
     }
 
